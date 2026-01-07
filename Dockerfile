@@ -8,15 +8,16 @@ RUN apt-get update && apt-get install -y \
     g++ \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements and install Python dependencies
+# Copy and install Python dependencies
 COPY backend/requirements.txt ./backend/
 RUN pip install --no-cache-dir -r backend/requirements.txt
 
-# Copy application code
+# Copy all application code
 COPY . .
 
 # Expose port
 EXPOSE $PORT
 
-# Start command - Fixed syntax
-CMD cd backend && python -m uvicorn olifan_backend_api:app --host 0.0.0.0 --port $PORT
+# Working startup command
+ENTRYPOINT []
+CMD ["sh", "-c", "cd backend && exec python -m uvicorn olifan_backend_api:app --host 0.0.0.0 --port $PORT"]
