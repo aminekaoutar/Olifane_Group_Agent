@@ -2,7 +2,8 @@
 NIXPACKS_PATH = "/app/node_modules/.bin:$NIXPACKS_PATH"
 
 [phases.setup]
-commands = ["npm install -g pnpm"]
+nixPkgs = ["nodejs_20", "pnpm"]
+commands = []
 
 [phases.install]
 commands = ["pnpm install --no-frozen-lockfile"]

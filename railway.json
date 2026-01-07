@@ -1,0 +1,10 @@
+{
+  "build": {
+    "builder": "NIXPACKS",
+    "nodeVersion": "20.18.0"
+  },
+  "deploy": {
+    "startCommand": "cd backend && python -m uvicorn olifan_backend_api:app --host 0.0.0.0 --port $PORT",
+    "numReplicas": 1
+  }
+}
