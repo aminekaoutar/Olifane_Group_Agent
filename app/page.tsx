@@ -169,17 +169,8 @@ export default function Page() {
         content: msg.content
       }));
 
-      // Determine backend URL based on environment
-      let backendUrl;
-      if (typeof window !== 'undefined') {
-        // Client-side check
-        backendUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-          ? 'http://localhost:8000'
-          : process.env.NEXT_PUBLIC_BACKEND_URL || 'YOUR_RAILWAY_DEPLOYMENT_URL'; // ← Replace with URL from 'railway url' command
-      } else {
-        // Server-side (shouldn't happen in this context)
-        backendUrl = 'http://localhost:8000';
-      }
+      // Use Render backend URL (update this with your actual Render URL)
+      const backendUrl = 'https://olifane-group-agent.onrender.com';
 
       console.log('Connecting to backend:', backendUrl);
 
