@@ -18,5 +18,5 @@ COPY . .
 # Expose port
 EXPOSE $PORT
 
-# Start command
-CMD ["sh", "-c", "cd backend && python -m uvicorn olifan_backend_api:app --host 0.0.0.0 --port $PORT"]
+# Start command - Fixed syntax
+CMD cd backend && python -m uvicorn olifan_backend_api:app --host 0.0.0.0 --port $PORT
