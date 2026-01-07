@@ -2,7 +2,7 @@
 NIXPACKS_PATH = "/app/node_modules/.bin:$NIXPACKS_PATH"
 
 [phases.setup]
-nixPkgs = ["nodejs_20", "pnpm"]
+nixPkgs = ["nodejs_20", "pnpm", "python311", "python311Packages.pip"]
 commands = []
 
 [phases.install]
