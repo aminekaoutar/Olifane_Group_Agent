@@ -175,7 +175,7 @@ export default function Page() {
         // Client-side check
         backendUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
           ? 'http://localhost:8000'
-          : process.env.NEXT_PUBLIC_BACKEND_URL || 'YOUR_RAILWAY_DEPLOYMENT_URL'; // ← Replace with your actual Railway URL from "railway url" command
+          : process.env.NEXT_PUBLIC_BACKEND_URL || 'YOUR_RAILWAY_DEPLOYMENT_URL'; // ← Replace with URL from 'railway url' command
       } else {
         // Server-side (shouldn't happen in this context)
         backendUrl = 'http://localhost:8000';

@@ -1,8 +1,14 @@
+[variables]
+NIXPACKS_PATH = "/app/node_modules/.bin:$NIXPACKS_PATH"
+
 [phases.setup]
 commands = ["npm install -g pnpm"]
 
+[phases.install]
+commands = ["pnpm install --no-frozen-lockfile"]
+
 [phases.build]
-commands = [
-  "pnpm install --no-frozen-lockfile",
-  "pnpm run build"
-]
+commands = ["pnpm run build"]
+
+[start]
+command = "cd backend && python -m uvicorn olifan_backend_api:app --host 0.0.0.0 --port $PORT"
