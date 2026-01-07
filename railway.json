@@ -1,9 +1,9 @@
 {
   "build": {
-    "builder": "NIXPACKS"
+    "builder": "DOCKERFILE"
   },
   "deploy": {
-    "startCommand": "chmod +x start.sh && ./start.sh",
+    "startCommand": "cd backend && pip install -r requirements.txt && python -m uvicorn olifan_backend_api:app --host 0.0.0.0 --port $PORT",
     "numReplicas": 1
   }
 }
